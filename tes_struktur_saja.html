@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symphony Biru untuk Annisa 💙</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display, Cinzel Decorative & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for beautiful icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tone.js for elegant synthesis of romantic background music -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        celestial: ['Cinzel Decorative', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        ether: {
+                            sky: '#E0F2FE',      /* Light blue sky tint */
+                            mist: '#F0F9FF',     /* Gentle ice/cloud blue */
+                            ocean: '#0284C7',    /* Clear ocean blue */
+                            deepOcean: '#0C4A6E',/* Elegant deep sea contrast */
+                            pearl: '#FFFFFF',    /* Pearlescent white */
+                            aqua: '#38BDF8',     /* Vivid light cyan */
+                            blushPink: '#FBCFE8' /* Soft contrast accent pink */
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 35s linear infinite',
+                        'spin-reverse': 'spin-back 40s linear infinite',
+                        'float-slow-1': 'float-1 9s ease-in-out infinite',
+                        'float-slow-2': 'float-2 11s ease-in-out infinite',
+                        'float-slow-3': 'float-3 10s ease-in-out infinite',
+                        'float-slow-4': 'float-4 12s ease-in-out infinite',
+                        'pulse-ripple': 'ripple 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shake': 'shake-anim 0.4s ease-in-out'
+                    },
+                    keyframes: {
+                        'spin-back': {
+                            'from': { transform: 'rotate(360deg)' },
+                            'to': { transform: 'rotate(0deg)' }
+                        },
+                        'float-1': {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(2deg)' }
+                        },
+                        'float-2': {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(15px) rotate(-3deg)' }
+                        },
+                        'float-3': {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(4deg)' }
+                        },
+                        'float-4': {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(12px) rotate(-2deg)' }
+                        },
+                        'ripple': {
+                            '0%, 100%': { transform: 'scale(1)', opacity: '0.4' },
+                            '50%': { transform: 'scale(1.15)', opacity: '0.1' }
+                        },
+                        'shake-anim': {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '20%, 60%': { transform: 'translateX(-8px)' },
+                            '40%, 80%': { transform: 'translateX(8px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F0F9FF;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38BDF8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284C7;
+        }
+
+        /* Glassmorphism Frosty Ice Panels */
+        .frost-panel {
+            background: rgba(240, 249, 255, 0.45);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.08);
+        }
+
+        .frost-panel-hover:hover {
+            background: rgba(240, 249, 255, 0.65);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 20px 45px -10px rgba(56, 189, 248, 0.25);
+            transform: translateY(-5px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Luxurious Blue Ribbon Envelope Container */
+        .envelope-wrapper {
+            perspective: 1000px;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .envelope {
+            position: relative;
+            background: #B9E6FF;
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-style: preserve-3d;
+        }
+
+        /* Front lower lip cover of envelope body */
+        .envelope::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 55%;
+            background: #E0F2FE;
+            z-index: 3;
+            border-radius: 0 0 16px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        /* The Love Letter - Slides up & expands to a spacious half-screen paper sheet */
+        .envelope .letter {
+            position: absolute;
+            left: 5%;
+            top: 20px;
+            width: 90%;
+            height: 95%;
+            background: #FFFFFF;
+            border-radius: 12px;
+            z-index: 2;
+            transform: translateY(0);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.05);
+            transform-origin: center bottom;
+        }
+
+        /* The Triangle Envelope Flap */
+        .envelope .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: #7DD3FC;
+            clip-path: polygon(0 0, 50% 100%, 100% 0);
+            transform-origin: top;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 5;
+            border-radius: 16px 16px 0 0;
+        }
+        
+        .envelope.open .flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        /* MAGICAL EXPANSION: Letter occupies half-screen width and comfortable height when open */
+        .envelope.open .letter {
+            transform: translateY(-120px) scale(1.4);
+            z-index: 45;
+            height: 240px; /* Expands height */
+            width: 140%;   /* Expands width */
+            left: -20%;    /* Recenter expanded sheet */
+            box-shadow: 0 25px 50px -12px rgba(12, 74, 110, 0.3);
+        }
+
+        /* Larger viewports get even wider reading area (up to half screen) */
+        @media (min-width: 768px) {
+            .envelope.open .letter {
+                transform: translateY(-160px) scale(1.6);
+                height: 300px;
+                width: 160%;
+                left: -30%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-sky-50 to-blue-100 text-slate-800 font-sans overflow-x-hidden relative min-h-screen flex items-center justify-center">
+
+    <!-- Background Music element -->
+    <audio id="bgMusic" loop>
+        <source src="shapeof.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating background interactive canvas -->
+    <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-80"></canvas>
+
+    <!-- Floating media player & controls (Only shown after unlocking) -->
+    <div id="floatingControls" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 hidden">
+        <button id="musicToggleBtn" onclick="toggleMusic()" class="w-14 h-14 bg-gradient-to-r from-sky-400 to-ether-ocean rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform duration-300 relative group animate-bounce">
+            <i id="musicIcon" class="fa-solid fa-music text-xl text-white"></i>
+        </button>
+    </div>
+
+    <!-- MAIN STEP-BY-STEP PROCESSOR CONTAINER -->
+    <main class="relative z-10 w-full flex items-center justify-center p-4">
+
+        <!-- ================= PAGE 1: REAL COUNTDOWN GATE (LOCKED) ================= -->
+        <section id="page-1" class="w-full max-w-xl frost-panel rounded-[2rem] p-8 md:p-12 text-center border border-white/60 shadow-2xl flex flex-col justify-between items-center space-y-8 transition-all duration-700">
+            <div class="space-y-4">
+                <p class="text-[10px] font-semibold tracking-[0.5em] text-ether-ocean uppercase font-celestial">
+                    ✦ Ocean Tide of Time ✦
+                </p>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-ether-deepOcean via-ether-ocean to-ether-aqua leading-tight">
+                    Satu Dekapan <br>Menjelang Hari Indahmu
+                </h1>
+                <p class="text-xs sm:text-sm text-slate-500 italic max-w-sm mx-auto leading-relaxed">
+                    Sabar ya sayangku, hadiah kejutan istimewa ini baru bisa kamu buka ketika waktu hitung mundur di bawah ini sudah habis sepenuhnya! 💙
+                </p>
+                <div class="h-[1.5px] w-24 bg-gradient-to-r from-transparent via-ether-aqua to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <!-- Asymmetric staggered countdown organic blobs -->
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-6 py-2">
+                <!-- Days Blob -->
+                <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex flex-col items-center justify-center animate-float-slow-1">
+                    <div class="absolute inset-0 bg-white/70 backdrop-blur-md shadow-lg border border-white rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%]"></div>
+                    <span id="timer-days" class="text-2xl sm:text-3xl font-serif font-bold text-ether-deepOcean z-10">00</span>
+                    <span class="text-[8px] font-bold tracking-widest text-ether-ocean uppercase mt-0.5 z-10">Hari</span>
+                </div>
+
+                <!-- Hours Blob -->
+                <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex flex-col items-center justify-center animate-float-slow-2 mt-4">
+                    <div class="absolute inset-0 bg-white/70 backdrop-blur-md shadow-lg border border-white rounded-[50%_50%_30%_70%_/_50%_60%_40%_60%]"></div>
+                    <span id="timer-hours" class="text-2xl sm:text-3xl font-serif font-bold text-ether-deepOcean z-10">00</span>
+                    <span class="text-[8px] font-bold tracking-widest text-ether-ocean uppercase mt-0.5 z-10">Jam</span>
+                </div>
+
+                <!-- Minutes Blob -->
+                <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex flex-col items-center justify-center animate-float-slow-3 -mt-2">
+                    <div class="absolute inset-0 bg-white/70 backdrop-blur-md shadow-lg border border-white rounded-[60%_40%_50%_50%_/_30%_45%_55%_70%]"></div>
+                    <span id="timer-mins" class="text-2xl sm:text-3xl font-serif font-bold text-ether-deepOcean z-10">00</span>
+                    <span class="text-[8px] font-bold tracking-widest text-ether-ocean uppercase mt-0.5 z-10">Menit</span>
+                </div>
+
+                <!-- Seconds Blob -->
+                <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex flex-col items-center justify-center animate-float-slow-4 mt-2">
+                    <div class="absolute inset-0 bg-white/80 backdrop-blur-md shadow-xl border-2 border-ether-aqua/30 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]"></div>
+                    <div class="absolute inset-1 rounded-full border border-dashed border-ether-aqua/40 animate-spin-slow"></div>
+                    <span id="timer-secs" class="text-2xl sm:text-3xl font-serif font-bold text-ether-ocean z-10">00</span>
+                    <span class="text-[8px] font-bold tracking-widest text-ether-aqua uppercase mt-0.5 z-10">Detik</span>
+                </div>
+            </div>
+
+            <!-- Lock info indicator -->
+            <div id="lock-badge" class="bg-amber-500/10 border border-amber-300 text-amber-700 text-xs py-2 px-5 rounded-full flex items-center gap-2 animate-pulse font-medium">
+                <i class="fa-solid fa-lock"></i>
+                <span id="lock-badge-text">STATUS: TERKUNCI (Waktu belum habis)</span>
+            </div>
+
+            <div class="w-full max-w-sm space-y-3">
+                <button id="btn-countdown-proceed" onclick="verifyCountdownPermission()" class="w-full py-4 px-8 bg-slate-200 text-slate-400 font-serif font-bold rounded-2xl cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2 border border-slate-300" disabled>
+                    <i class="fa-solid fa-lock"></i>
+                    <span>TUNGGU SAMPAI WAKTUNYA</span>
+                </button>
+                <!-- Subtle Bypass link for Syarif/Annisa to bypass in development -->
+                <button onclick="bypassCountdown()" class="text-[9px] text-ether-ocean/50 hover:text-ether-ocean underline tracking-widest uppercase font-semibold">Bypass Timer (Khusus Syarif) 🔑</button>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 2: VERIFICATION SPLASH SCREEN (SIAPA KAMU?) ================= -->
+        <section id="page-2" class="w-full max-w-md frost-panel rounded-[2rem] p-8 md:p-12 text-center border border-white/60 shadow-2xl hidden flex-col justify-between min-h-[440px] opacity-0 transition-all duration-700">
+            <div class="space-y-4">
+                <div class="inline-flex items-center justify-center p-4 bg-white/80 rounded-full border border-sky-200 shadow-sm animate-float-slow-1">
+                    <span class="text-3xl">🎁</span>
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl font-serif font-extrabold text-ether-deepOcean">
+                    Gerbang Kesayangan
+                </h2>
+
+                <p class="text-xs text-slate-500 leading-relaxed max-w-xs mx-auto">
+                    Kunci portal cinta tersimpan aman. Jawab pertanyaan manis ini untuk membuktikan identitasmu! 🗝️
+                </p>
+
+                <div class="p-4 bg-white/75 rounded-2xl border border-sky-100 shadow-inner">
+                    <p class="text-xs sm:text-sm font-semibold text-ether-ocean font-serif leading-relaxed">
+                        "Siapa gadis paling gemes, tercantik, terlucu sedunia yang selalu dicintai Syarif selamanya?"
+                    </p>
+                </div>
+            </div>
+
+            <div id="verification-alert" class="text-xs text-sky-600 font-bold italic hidden animate-bounce my-2">
+                <!-- Populated on wrong button hover -->
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 mt-6 relative items-center justify-center h-24 w-full">
+                <button onclick="goToPage(3)" class="w-full sm:w-auto px-7 py-3 bg-gradient-to-r from-ether-ocean via-ether-aqua to-sky-400 rounded-full font-serif font-bold text-xs tracking-wider text-white shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 z-10 whitespace-nowrap">
+                    Annisa Mutiara Rizki ❤️
+                </button>
+
+                <button id="wrongBtn" onmouseover="moveWrongButton()" ontouchstart="moveWrongButton()" class="w-full sm:w-auto px-6 py-3 bg-white/60 text-slate-500 rounded-full font-sans text-xs transition-all duration-300 border border-slate-200 hover:bg-white whitespace-nowrap">
+                    Bukan Annisa 😜
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 3: ANNIVERSARY PASSWORD CHALLENGE ================= -->
+        <section id="page-3" class="w-full max-w-md frost-panel rounded-[2rem] p-8 md:p-12 text-center border border-white/60 shadow-2xl hidden flex-col justify-center items-center space-y-6 opacity-0 transition-all duration-700">
+            <div class="w-20 h-20 bg-white/80 rounded-full flex items-center justify-center border border-sky-200 shadow-sm text-3xl animate-float-slow-1">
+                🔒
+            </div>
+            
+            <div class="space-y-2">
+                <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-ether-deepOcean">Satu Pertanyaan Terakhir!</h2>
+                <p class="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-xs mx-auto">
+                    Masukkan tanggal jadian kita sayang, untuk membuka seluruh kado berharga di dalam website ini! 💕
+                </p>
+            </div>
+
+            <!-- Passcode Input -->
+            <div class="w-full space-y-2">
+                <label for="dateInput" class="block text-left text-[9px] uppercase tracking-widest text-ether-ocean font-bold">Format Tanggal: DD-MM-YYYY</label>
+                <input type="text" id="dateInput" placeholder="Contoh: 24-03-2026" class="w-full bg-white/80 border-2 border-sky-100 focus:border-sky-400 rounded-2xl py-4 px-5 text-center text-xl font-mono tracking-widest text-ether-ocean focus:outline-none transition-all placeholder:text-sky-200 shadow-inner" maxlength="10">
+            </div>
+
+            <!-- Error Box -->
+            <div id="password-error" class="w-full bg-red-50 border border-red-200 rounded-xl p-3 hidden opacity-0 transition-opacity duration-300">
+                <p class="text-xs text-red-600 flex items-center justify-center gap-2 font-medium">
+                    <i class="fa-solid fa-heart-crack text-red-400 animate-pulse"></i>
+                    <span>Aduh salah sayang... Coba diingat-ingat lagi perjuangan kita! 🥺</span>
+                </p>
+            </div>
+
+            <button onclick="validatePassword()" class="w-full bg-gradient-to-r from-ether-ocean via-ether-aqua to-sky-400 hover:brightness-110 text-white font-serif font-bold py-4 px-8 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-key text-xs text-ether-sky"></i>
+                <span>Buka Kado Kenangan</span>
+            </button>
+            
+            <button onclick="toggleHint()" class="text-[10px] text-ether-ocean hover:text-sky-500 underline transition-all uppercase font-semibold tracking-wider">Butuh petunjuk? Klik di sini</button>
+            <p id="password-hint" class="text-xs text-sky-600 font-medium italic hidden">Petunjuk: Bulan ketiga di tahun 2026... 😉</p>
+        </section>
+
+
+        <!-- ================= PAGE 4: HERO GREETING & IMMERSIVE ENVELOPE ================= -->
+        <section id="page-4" class="w-full max-w-2xl frost-panel rounded-[2rem] p-6 md:p-12 text-center border border-white/60 shadow-2xl hidden flex-col justify-center items-center space-y-8 opacity-0 transition-all duration-700 relative">
+            
+            <!-- Backdrop dimming overlay when the letter is open -->
+            <div id="letterBackdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-[3px] opacity-0 pointer-events-none transition-all duration-700 rounded-[2rem] z-20"></div>
+
+            <div class="space-y-4 z-10">
+                <!-- Glowing Heart Pulse -->
+                <div class="inline-flex items-center justify-center p-4 bg-white/80 shadow-md rounded-full border border-sky-100 mb-2 animate-float-slow-1">
+                    <i class="fa-solid fa-heart text-4xl text-sky-400 filter drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]"></i>
+                </div>
+                            
+                <!-- Grand Birthday Greeting Heading -->
+                <h1 class="text-3xl sm:text-5xl font-serif font-extrabold leading-tight tracking-wide text-ether-deepOcean">
+                    Selamat Ulang Tahun <br><span class="hero-gf-name text-sky-600 filter drop-shadow-[0_0_8px_rgba(56,189,248,0.2)] italic">Annisa Mutiara Rizki</span>! ✨
+                </h1>
+
+                <!-- Counter Section: Days we have loved each other -->
+                <div class="pt-2">
+                    <div class="inline-block frost-panel rounded-2xl px-6 py-3 border border-white hover:border-sky-300 transition-colors duration-300">
+                        <p class="text-[9px] font-bold text-ether-ocean uppercase tracking-widest mb-1 font-serif">Sudah Selama Ini Kita Bersama</p>
+                        <div class="flex items-center justify-center gap-3">
+                            <span id="loveDays" class="text-2xl sm:text-3xl font-serif font-bold text-sky-600">...</span>
+                            <span class="text-xs sm:text-sm text-slate-600 font-medium font-sans">Hari Berdua Penuh Kasih Sayang</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE LOVE LETTER ENVELOPE (With Cinematic Expansion) -->
+            <div class="w-full text-center space-y-6 z-30">
+                <div class="space-y-1">
+                    <h3 class="text-xl sm:text-2xl font-serif font-bold text-ether-deepOcean">Buka Surat Rahasia 💌</h3>
+                    <p class="text-xs text-slate-500 max-w-md mx-auto">Sentuh atau klik amplop di bawah untuk membaca pesan cinta dari lubuk hatiku yang terbuka lebar.</p>
+                </div>
+
+                <!-- Envelope Container Wrapper -->
+                <div class="envelope-wrapper h-[260px] sm:h-[300px] flex items-center justify-center relative mt-6">
+                    <!-- Outer envelope body -->
+                    <div id="interactiveEnvelope" onclick="openEnvelope()" class="envelope w-[280px] h-[160px] sm:w-[340px] sm:h-[160px] rounded-xl cursor-pointer">
+                        <!-- Flap of the envelope -->
+                        <div class="flap"></div>
+                        
+                        <!-- Expanded Paper Sheet letter (Opens up to half screen space width) -->
+                        <div class="letter rounded-lg p-5 flex flex-col justify-between text-left shadow-inner overflow-hidden">
+                            <div class="space-y-2 overflow-y-auto max-h-[170px] md:max-h-[220px] scrollbar-thin">
+                                <h4 id="letterTitle" class="font-serif font-extrabold text-ether-deepOcean text-xs sm:text-sm border-b border-sky-100 pb-1">Untuk Manusia Terspesial Di Hidupku,</h4>
+                                <p id="letterBody" class="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-serif italic">
+                                    Selamat ulang tahun yaa sayang. Kamu tau ga yang? semenjak kamu hadir, hidupku beneran berubah menjadi lebih baik yang, banyak hal buruk yang udah aku tinggalkan yang, walaupun masih ada sedikit yang masih terulang sayang, tapi aku tetap berusaha kok yang buat berubah menjadi lebih baik sayang. Makasih yaa sayang karena selalu sabar dengan sifat egois aku, ga mau ngalahnya aku, tapi alhamdulillah aku sekarang udah belajar menjadi lebih baik, udah bisa sedikit demi sedikit memahami kamu sayang. Intinya makasih yaa sayang udah hadir di hidup aku sayang. I love u forever sayang. 💙
+                                </p>
+                            </div>
+                            <div class="flex justify-between items-center pt-2 border-t border-sky-100 text-[9px] text-ether-ocean font-bold">
+                                <span class="italic">Mencintaimu selalu,</span>
+                                <span id="letterYourName" class="font-serif">Syarif Ganteng</span>
+                            </div>
+                        </div>
+
+                        <!-- Heart Seal -->
+                        <div class="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-gradient-to-r from-sky-300 to-ether-ocean rounded-full flex items-center justify-center shadow-md z-10 transition-transform hover:scale-110">
+                            <i id="envelopeHeartIcon" class="fa-solid fa-envelope text-white text-lg"></i>
+                        </div>
+
+                        <!-- Front cover of envelope body -->
+                        <div class="absolute bottom-0 left-0 w-0 h-0 border-t-[80px] border-t-transparent border-b-[80px] border-b-transparent border-l-[140px] border-l-[#A1DCFF] w-[50%] z-2 rounded-bl-xl"></div>
+                        <div class="absolute bottom-0 right-0 w-0 h-0 border-t-[80px] border-t-transparent border-b-[80px] border-b-transparent border-r-[140px] border-r-[#A1DCFF] w-[50%] z-2 rounded-br-xl"></div>
+                        <div class="absolute bottom-0 left-0 w-full h-[96px] bg-[#B0E2FF] z-1 rounded-b-xl"></div>
+                    </div>
+                </div>
+
+                <!-- Instruction Hint -->
+                <div id="envelopeHint" class="text-[11px] text-ether-ocean animate-pulse font-medium tracking-wider font-serif">
+                    <i class="fa-solid fa-hand-pointer mr-1"></i>
+                    Sentuh atau klik amplop di atas untuk membaca pesan lebar!
+                </div>
+            </div>
+
+            <!-- Page Navigation Button -->
+            <button onclick="goToPage(5)" class="px-8 py-3 bg-white/80 border border-sky-100 hover:border-sky-400 rounded-full hover:bg-white active:scale-95 transition-all text-xs font-serif font-bold text-ether-ocean flex items-center gap-2 shadow-sm z-30">
+                <span>Lanjut Lihat Memori Kita 📸</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </section>
+
+
+        <!-- ================= PAGE 5: POLAROID GALLERY ================= -->
+        <section id="page-5" class="w-full max-w-5xl frost-panel rounded-[2rem] p-6 md:p-12 text-center border border-white/60 shadow-2xl hidden flex-col justify-center items-center space-y-10 opacity-0 transition-all duration-700">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ether-deepOcean tracking-wide">
+                    <i class="fa-solid fa-camera-retro text-sky-400 mr-2"></i>Manusia Terspesial BagiKu
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">Setiap foto memiliki sejuta kebahagiaan yang tak akan bisa hilang oleh waktu.</p>
+            </div>
+
+            <!-- Polaroid Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl justify-center items-center">
+                
+                <!-- Polaroid 1 -->
+                <div class="mx-auto transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 w-full max-w-[280px]">
+                    <div class="bg-white p-3 pb-6 shadow-2xl rounded-sm text-slate-700 border border-slate-100">
+                        <div class="h-56 overflow-hidden rounded-sm relative group bg-sky-50">
+                            <img id="polaroidImg1" src="upscalemedia-transformed.jpeg" alt="Beautiful Moment 1" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" onerror="this.src='https://placehold.co/400&400/E0F2FE/0284C7?text=Sayangku+1'">
+                            <div class="absolute inset-0 bg-sky-300/10 mix-blend-color"></div>
+                        </div>
+                        <p class="font-serif text-center mt-4 text-[11px] font-semibold tracking-wide text-slate-500 italic">Senyuman Terindah Anak Bayi Aku</p>
+                    </div>
+                </div>
+
+                <!-- Polaroid 2 (Center Hero Image) -->
+                <div class="mx-auto transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 w-full max-w-[290px] z-10">
+                    <div class="bg-white p-3 pb-6 shadow-2xl rounded-sm text-slate-700 border-4 border-sky-200">
+                        <div class="h-60 overflow-hidden rounded-sm relative group bg-sky-50">
+                            <img id="polaroidImg2" src="WhatsApp Image 2026-06-07 at 09.04.32 (1).jpeg" alt="Beautiful Moment 2" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" onerror="this.src='https://placehold.co/400&400/E0F2FE/0284C7?text=Sayangku+2'">
+                            <div class="absolute inset-0 bg-cyan-300/10 mix-blend-color"></div>
+                        </div>
+                        <p class="font-serif text-center mt-4 text-xs font-extrabold tracking-wide text-slate-600">Cintaku Selamanya 💙</p>
+                    </div>
+                </div>
+
+                <!-- Polaroid 3 -->
+                <div class="mx-auto transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 w-full max-w-[280px]">
+                    <div class="bg-white p-3 pb-6 shadow-2xl rounded-sm text-slate-700 border border-slate-100">
+                        <div class="h-56 overflow-hidden rounded-sm relative group bg-sky-50">
+                            <img id="polaroidImg3" src="WhatsApp Image 2026-06-07 at 09.04.30.jpeg" alt="Beautiful Moment 3" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" onerror="this.src='https://placehold.co/400&400/E0F2FE/0284C7?text=Sayangku+3'">
+                            <div class="absolute inset-0 bg-sky-300/10 mix-blend-color"></div>
+                        </div>
+                        <p class="font-serif text-center mt-4 text-[11px] font-semibold tracking-wide text-slate-500 italic">Mirror Selfies 💙</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Page Navigation Button -->
+            <button onclick="goToPage(6)" class="px-8 py-3 bg-white/80 border border-sky-100 hover:border-sky-400 rounded-full hover:bg-white active:scale-95 transition-all text-xs font-serif font-bold text-ether-ocean flex items-center gap-2 shadow-sm">
+                <span>Lanjut Putar Video Kenangan 🎬</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </section>
+
+
+        <!-- ================= PAGE 6: VIDEO MEMORY ZONE ================= -->
+        <section id="page-6" class="w-full max-w-4xl frost-panel rounded-[2rem] p-6 md:p-10 text-center border border-white/60 shadow-2xl hidden flex-col justify-center items-center space-y-8 opacity-0 transition-all duration-700">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ether-deepOcean">
+                    🎥 Rangkuman Video Lucu Kita
+                </h3>
+                <p class="text-slate-500 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
+                    Dari video random, video alay, ketawa gak jelas, sampai momen-momen yang bikin aku senyum sendiri kalau ngeliatnya lagi. Semuanya tersimpan jadi kenangan terindah. ❤️
+                </p>
+            </div>
+
+            <!-- Video Player Wrap -->
+<div class="w-full max-w-2xl bg-white/80 rounded-2xl overflow-hidden border border-sky-100 shadow-xl">
+    <video
+        id="memoriesVideo"
+        controls
+        preload="none"
+        class="w-full aspect-video"
+        poster="upscalemedia-transformed.jpeg"
+    >
+        <source src="rara_hd.mp4" type="video/mp4">
+        Browser kamu tidak mendukung pemutaran video.
+    </video>
+
+    <div class="p-4 bg-sky-50 text-center border-t border-sky-100">
+        <p class="text-xs text-ether-ocean font-serif italic">
+            "Terima kasih sudah menjadi bagian paling indah dalam hidupku sayang."
+        </p>
+    </div>
+</div>
+
+           
+            <!-- Page Navigation Button -->
+            <button onclick="goToPage(7)" class="px-8 py-3 bg-white/80 border border-sky-100 hover:border-sky-400 rounded-full hover:bg-white active:scale-95 transition-all text-xs font-serif font-bold text-ether-ocean flex items-center gap-2 shadow-sm">
+                <span>Lanjut ke Penutup & Tiup Lilin 🎂</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </section>
+
+
+        <!-- ================= PAGE 7: OUTRO & CAKE INTERACTIVE BLOWING ================= -->
+        <section id="page-7" class="w-full max-w-xl frost-panel rounded-[2rem] p-8 md:p-12 text-center border border-white/60 shadow-2xl hidden flex-col justify-center items-center space-y-8 opacity-0 transition-all duration-700">
+            
+            <div class="space-y-2">
+                <h4 class="text-2xl sm:text-3xl font-serif font-bold text-ether-deepOcean">Make A Wish 🎂</h4>
+                <p class="text-xs text-slate-500 leading-relaxed max-w-xs mx-auto">Pikirkan satu permohonan paling indah di hatimu sayang, lalu klik tombol untuk meniup lilinnya!</p>
+            </div>
+
+            <!-- Birthday Cake SVG Simulation -->
+            <div class="relative w-44 h-44 mx-auto flex items-center justify-center">
+                <div id="candleAura" class="absolute top-[10%] w-20 h-20 bg-amber-300/30 rounded-full blur-xl animate-pulse z-0"></div>
+                
+                <svg id="cakeSvg" viewBox="0 0 200 200" class="w-full h-full z-10">
+                    <!-- Cake Plate -->
+                    <path d="M 20,160 Q 100,185 180,160 L 165,175 Q 100,195 35,175 Z" fill="#0284c7" class="opacity-90"/>
+                    <ellipse cx="100" cy="165" rx="80" ry="15" fill="#0369a1"/>
+                    
+                    <!-- Cake Bottom Layer -->
+                    <rect x="35" y="105" width="130" height="50" rx="10" fill="#bae6fd"/>
+                    <path d="M 35,130 Q 100,150 165,130 L 165,155 Q 100,165 35,155 Z" fill="#38bdf8"/>
+                    
+                    <!-- Cake Top Layer Decor -->
+                    <rect x="50" y="70" width="100" height="40" rx="8" fill="#e0f2fe"/>
+                    <path d="M 50,90 Q 100,105 150,90 L 150,110 Q 100,115 50,110 Z" fill="#7dd3fc"/>
+                    
+                    <!-- Cream Drips -->
+                    <path d="M 50,75 C 60,85 70,85 80,75 C 90,85 100,85 110,75 C 120,85 130,85 140,75 C 150,85 150,75 150,75 L 150,70 L 50,70 Z" fill="#ffffff" />
+                    
+                    <!-- Cute Strawberries / Candies on top -->
+                    <circle cx="65" cy="65" r="8" fill="#ef4444"/>
+                    <circle cx="100" cy="65" r="8" fill="#38bdf8"/>
+                    <circle cx="135" cy="65" r="8" fill="#fbcfe8"/>
+                    
+                    <!-- Candle Base -->
+                    <rect x="97" y="35" width="6" height="30" fill="#0284c7" rx="2"/>
+                    <line x1="100" y1="35" x2="100" y2="30" stroke="#ef4444" stroke-width="2"/>
+                    
+                    <!-- Candle Flame -->
+                    <path id="candleFlame" class="animate-bounce origin-bottom" d="M 100,30 C 95,25 95,15 100,8 C 105,15 105,25 100,30 Z" fill="url(#flameGradient)" filter="url(#glow)"/>
+                    
+                    <defs>
+                        <radialGradient id="flameGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#fef08a"/>
+                            <stop offset="50%" stop-color="#f59e0b"/>
+                            <stop offset="100%" stop-color="#ef4444"/>
+                        </radialGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                </svg>
+                
+                <!-- Blow Button Overlay -->
+                <button id="blowBtn" onclick="blowCandle()" class="absolute top-[5%] inset-x-0 w-max mx-auto bg-gradient-to-r from-ether-ocean to-ether-aqua hover:brightness-110 text-white font-serif font-bold px-4 py-2 rounded-full text-xs shadow-lg flex items-center gap-1 transform hover:scale-105 active:scale-95 transition-all animate-pulse">
+                    <i class="fa-solid fa-wind"></i> Tiup Lilin!
+                </button>
+            </div>
+
+            <!-- Success Post-blowing Message -->
+            <div id="postBlowContent" class="hidden opacity-0 space-y-4 max-w-sm mx-auto transition-opacity duration-1000">
+                <div class="inline-flex items-center justify-center p-3 rounded-full bg-emerald-100 text-emerald-600 text-xl mb-1">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4 class="font-serif text-xl font-bold text-emerald-700">Permohonan Terkirim! ✨</h4>
+                <p class="text-[11px] sm:text-xs text-slate-500 italic leading-relaxed">
+                    "Semoga semua doa dan harapan tulusmu hari ini didengar oleh semesta dan dikabulkan di waktu terbaik-Nya ya Annisa Mutiara Rizki tercinta..."
+                </p>
+            </div>
+
+            <!-- Heartwarming Outro Note -->
+            <div id="hug-box" class="space-y-4 pt-6 border-t border-sky-100 w-full">
+                <h4 class="text-lg font-serif font-bold text-ether-deepOcean">Happy Birthday, Sayang 🎂❤️</h4>
+                <p class="text-slate-500 italic text-[11px] max-w-xs mx-auto leading-relaxed">
+                    "Kalau suatu hari nanti kita menonton video ini lagi, semoga kita bisa tersenyum dan berkata: ternyata kita berdua udah bertahan sejauh ini yaa."
+                </p>
+                
+                <div class="pt-2 flex flex-col items-center gap-3">
+                    <button onclick="virtualHug()" class="px-6 py-2.5 bg-gradient-to-r from-ether-ocean to-ether-aqua hover:brightness-110 text-white rounded-full font-serif font-bold text-xs shadow-md transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim Pelukan Virtual 🤗
+                    </button>
+                    <p id="hugMessage" class="text-xs text-ether-ocean font-bold italic h-4 transition-all duration-300"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CONFETTI CANVAS FOR CELEBRATIONS -->
+    <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-40 hidden"></canvas>
+
+    <script>
+        // TARGET DATES
+        // 1. Countdown Target (Website Lock Release).
+        // Standard set to June 15, 2026.
+        const countdownTarget = new Date("2026-06-14T14:22:00").getTime();
+
+        // 2. Anniversary Date for Password
+        const anniversaryDateString = "2026-03-24"; 
+
+        let isMusicPlaying = false;
+        let syntheticAudioInterval = null;
+
+        // Particle system config
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Beautiful hybrid blue/gold floating particles
+        class FloatingParticle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height + canvas.height;
+                this.size = Math.random() * 4 + 1;
+                this.speedY = Math.random() * -1.2 - 0.4;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.opacity = Math.random() * 0.7 + 0.3;
+                this.isHeart = Math.random() > 0.75;
+                this.color = this.isHeart ? '#38BDF8' : '#D4AF37'; // Aqua Blue or Celestial Gold
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                if (this.y < -10) {
+                    this.y = canvas.height + 10;
+                    this.x = Math.random() * canvas.width;
+                }
+                this.speedX += Math.random() * 0.1 - 0.05;
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                if (this.isHeart) {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    const topY = this.y - this.size;
+                    ctx.moveTo(this.x, this.y);
+                    ctx.bezierCurveTo(this.x - this.size, topY, this.x - this.size * 2, this.y - this.size/2, this.x, this.y + this.size);
+                    ctx.bezierCurveTo(this.x + this.size * 2, this.y - this.size/2, this.x + this.size, topY, this.x, this.y);
+                    ctx.fill();
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = this.color;
+                    ctx.fill();
+                }
+                ctx.restore();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(60, Math.floor(window.innerWidth / 15));
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new FloatingParticle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Countdown Timer Logic
+        let isGateUnlocked = false;
+
+        function runCountdown() {
+            const timerDays = document.getElementById('timer-days');
+            const timerHours = document.getElementById('timer-hours');
+            const timerMins = document.getElementById('timer-mins');
+            const timerSecs = document.getElementById('timer-secs');
+            const proceedBtn = document.getElementById('btn-countdown-proceed');
+            const lockBadge = document.getElementById('lock-badge');
+            const lockBadgeText = document.getElementById('lock-badge-text');
+
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownTarget - now;
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    triggerUnlockState();
+                } else {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    timerDays.textContent = String(days).padStart(2, '0');
+                    timerHours.textContent = String(hours).padStart(2, '0');
+                    timerMins.textContent = String(minutes).padStart(2, '0');
+                    timerSecs.textContent = String(seconds).padStart(2, '0');
+                }
+            }, 1000);
+        }
+
+        // Action when Countdown is bypassed or reached zero
+        function triggerUnlockState() {
+            isGateUnlocked = true;
+            document.getElementById('timer-days').textContent = "00";
+            document.getElementById('timer-hours').textContent = "00";
+            document.getElementById('timer-mins').textContent = "00";
+            document.getElementById('timer-secs').textContent = "00";
+
+            const lockBadge = document.getElementById('lock-badge');
+            const lockBadgeText = document.getElementById('lock-badge-text');
+            const proceedBtn = document.getElementById('btn-countdown-proceed');
+
+            lockBadge.className = "bg-emerald-50 border border-emerald-300 text-emerald-700 text-xs py-2 px-5 rounded-full flex items-center gap-2 animate-bounce";
+            lockBadgeText.innerHTML = `<i class="fa-solid fa-lock-open animate-pulse"></i> STATUS: TERBUKA! (Waktu Telah Tiba)`;
+
+            proceedBtn.disabled = false;
+            proceedBtn.className = "w-full py-4 px-8 bg-gradient-to-r from-ether-ocean via-ether-aqua to-sky-400 hover:brightness-110 text-white font-serif font-bold rounded-2xl cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-sky-400/20";
+            proceedBtn.innerHTML = `<span>Buka Kado Sekarang</span> <i class="fa-solid fa-chevron-right text-xs"></i>`;
+        }
+
+        function bypassCountdown() {
+            triggerUnlockState();
+            playChimeSound();
+        }
+
+        function verifyCountdownPermission() {
+            if (isGateUnlocked) {
+                goToPage(2);
+            }
+        }
+
+        // Navigation Controller (Strictly single-page separate visual states)
+        function goToPage(pageNum) {
+            const pages = ['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7'];
+            
+            // Fade out the currently active page
+            pages.forEach(pId => {
+                const el = document.getElementById(pId);
+                if (el && !el.classList.contains('hidden')) {
+                    el.classList.add('opacity-0', 'scale-95');
+                    setTimeout(() => {
+                        el.classList.add('hidden');
+                        el.classList.remove('flex');
+                    }, 500);
+                }
+            });
+
+            // Fade in target page
+            const targetPageId = pages[pageNum - 1];
+            const targetEl = document.getElementById(targetPageId);
+
+            if (targetEl) {
+                setTimeout(() => {
+                    targetEl.classList.remove('hidden');
+                    targetEl.classList.add('flex');
+                    setTimeout(() => {
+                        targetEl.classList.remove('opacity-0', 'scale-95');
+                        targetEl.classList.add('opacity-100', 'scale-100');
+                    }, 50);
+                }, 550);
+            }
+
+            // Page Trigger Actions
+            if (pageNum === 4) {
+                updateDaysCounter();
+                startBackgroundMusic();
+                document.getElementById('floatingControls').classList.remove('hidden');
+                document.getElementById('floatingControls').classList.add('flex');
+            }
+            
+            // Control video when changing pages
+            const videoEl = document.getElementById('memoriesVideo');
+if (videoEl) {
+    videoEl.pause();
+    videoEl.currentTime = 0;
+}
+        }
+
+        // Playful Runaway Button "Bukan Annisa"
+        let badGuessesCount = 0;
+        function moveWrongButton() {
+            const btn = document.getElementById('wrongBtn');
+            const alertText = document.getElementById('verification-alert');
+            const isMobile = window.innerWidth < 640;
+            
+            badGuessesCount++;
+            alertText.classList.remove('hidden');
+
+            if (badGuessesCount === 1) {
+                alertText.innerHTML = `<i class="fa-solid fa-heart-crack mr-1"></i> Eh, jangan bohong yaaa! Coba klik nama kamu!`;
+            } else if (badGuessesCount >= 3) {
+                alertText.innerHTML = `<i class="fa-solid fa-heart mr-1"></i> Aku tahu kamu bercanda! Kamu pacar cantikku kan? Klik yang kiri sayang!`;
+            }
+
+            if (!isMobile) {
+                const xRandom = Math.random() * 160 - 80;
+                const yRandom = Math.random() * 160 - 80;
+                btn.style.transform = `translate(${xRandom}px, ${yRandom}px)`;
+            } else {
+                btn.classList.add('animate-shake');
+                setTimeout(() => btn.classList.remove('animate-shake'), 400);
+            }
+        }
+
+        // Password input automatic formatting (DD-MM-YYYY)
+        const dateInput = document.getElementById('dateInput');
+        dateInput.addEventListener('input', function(e) {
+            let input = e.target.value.replace(/\D/g, '');
+            if (input.length > 8) input = input.slice(0, 8);
+            
+            let formatted = '';
+            if (input.length > 0) {
+                formatted += input.slice(0, 2);
+            }
+            if (input.length > 2) {
+                formatted += '-' + input.slice(2, 4);
+            }
+            if (input.length > 4) {
+                formatted += '-' + input.slice(4, 8);
+            }
+            e.target.value = formatted;
+        });
+
+        function toggleHint() {
+            const hint = document.getElementById('password-hint');
+            hint.classList.toggle('hidden');
+        }
+
+        // Validate anniversary date
+        function validatePassword() {
+            const passwordVal = dateInput.value.trim();
+            const acceptedAnswers = ["24-03-2026", "24/03/2026", "24032026"];
+            const errorBox = document.getElementById('password-error');
+
+            if (acceptedAnswers.includes(passwordVal)) {
+                errorBox.classList.add('hidden');
+                triggerConfettiBurst();
+                playChimeSound();
+                setTimeout(() => {
+                    goToPage(4);
+                }, 800);
+            } else {
+                errorBox.classList.remove('hidden');
+                errorBox.classList.remove('opacity-0');
+                errorBox.classList.add('opacity-100');
+                
+                const container = document.getElementById('page-3');
+                container.classList.add('animate-shake');
+                setTimeout(() => container.classList.remove('animate-shake'), 500);
+            }
+        }
+
+        // Days counter since anniversary
+        function updateDaysCounter() {
+            const startDate = new Date(anniversaryDateString);
+            const today = new Date();
+            const differenceInTime = today.getTime() - startDate.getTime();
+            const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+            document.getElementById('loveDays').innerText = isNaN(differenceInDays) ? "0" : differenceInDays;
+        }
+
+        // Open/Close Envelope Letter Action with Half-Screen Expansion Overlay Blur
+        function openEnvelope() {
+            const envelope = document.getElementById('interactiveEnvelope');
+            const heartIcon = document.getElementById('envelopeHeartIcon');
+            const hint = document.getElementById('envelopeHint');
+            const backdrop = document.getElementById('letterBackdrop');
+            
+            if (envelope.classList.contains('open')) {
+                envelope.classList.remove('open');
+                backdrop.classList.add('opacity-0');
+                backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+                heartIcon.className = 'fa-solid fa-envelope text-white text-lg';
+                hint.innerHTML = '<i class="fa-solid fa-hand-pointer mr-2"></i> Sentuh atau klik amplop di atas untuk membaca pesan lebar!';
+            } else {
+                envelope.classList.add('open');
+                backdrop.classList.remove('opacity-0');
+                backdrop.classList.add('opacity-100', 'pointer-events-auto');
+                heartIcon.className = 'fa-solid fa-heart text-white text-lg animate-pulse';
+                hint.innerHTML = '<i class="fa-solid fa-heart mr-2"></i> Surat Terbuka! Klik lagi untuk melipatnya masuk kembali.';
+                playChimeSound();
+            }
+        }
+
+        // Procedural Synthesizer Sound Engine (Tone.js Fallback)
+        let synthEngine;
+        function initSynth() {
+            if (synthEngine) return;
+            synthEngine = new Tone.PolySynth(Tone.Synth, {
+                oscillator: { type: "sine" },
+                envelope: {
+                    attack: 0.1,
+                    decay: 0.2,
+                    sustain: 0.8,
+                    release: 1.5
+                }
+            }).toDestination();
+            synthEngine.volume.value = -12;
+        }
+
+        function playChimeSound() {
+            try {
+                initSynth();
+                if (Tone.context.state === 'suspended') {
+                    Tone.context.resume();
+                }
+                const now = Tone.now();
+                synthEngine.triggerAttackRelease("C5", "8n", now);
+                synthEngine.triggerAttackRelease("E5", "8n", now + 0.15);
+                synthEngine.triggerAttackRelease("G5", "8n", now + 0.3);
+                synthEngine.triggerAttackRelease("C6", "4n", now + 0.45);
+            } catch (err) {
+                console.log("Audio session error: ", err);
+            }
+        }
+
+        // Backup Romantic Melodies (Synthesizer Loop if .mp3 fails)
+        const romanticMelodies = [
+            261.63, 329.63, 392.00, 523.25,
+            349.23, 440.00, 523.25, 698.46,
+            392.00, 493.88, 587.33, 783.99,
+            329.63, 392.00, 493.88, 659.25
+        ];
+        let melodyIndex = 0;
+
+        function playNextSynthNote() {
+            if (!isMusicPlaying) return;
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.type = 'triangle';
+                
+                const noteFreq = romanticMelodies[melodyIndex % romanticMelodies.length];
+                osc.frequency.setValueAtTime(noteFreq, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(0, audioCtx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.06, audioCtx.currentTime + 0.1);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.5);
+                
+                osc.start(audioCtx.currentTime);
+                osc.stop(audioCtx.currentTime + 2.6);
+                
+                melodyIndex++;
+            } catch (e) {
+                console.log("Background Synth Error: ", e);
+            }
+        }
+
+        function startBackgroundMusic() {
+            isMusicPlaying = true;
+            const musicAudio = document.getElementById('bgMusic');
+            const musicIcon = document.getElementById('musicIcon');
+            const toggleBtn = document.getElementById('musicToggleBtn');
+
+            musicAudio.play().then(() => {
+                musicIcon.className = 'fa-solid fa-circle-pause text-xl text-white';
+                toggleBtn.classList.add('animate-spin-slow');
+            }).catch(() => {
+                musicIcon.className = 'fa-solid fa-music text-xl text-white';
+                toggleBtn.classList.add('animate-pulse');
+                if (!syntheticAudioInterval) {
+                    syntheticAudioInterval = setInterval(playNextSynthNote, 1800);
+                }
+            });
+        }
+
+        function toggleMusic() {
+            const musicAudio = document.getElementById('bgMusic');
+            const musicIcon = document.getElementById('musicIcon');
+            const toggleBtn = document.getElementById('musicToggleBtn');
+
+            if (isMusicPlaying) {
+                isMusicPlaying = false;
+                musicAudio.pause();
+                if (syntheticAudioInterval) {
+                    clearInterval(syntheticAudioInterval);
+                    syntheticAudioInterval = null;
+                }
+                musicIcon.className = 'fa-solid fa-music text-xl text-white';
+                toggleBtn.classList.remove('animate-spin-slow');
+                toggleBtn.classList.remove('animate-pulse');
+            } else {
+                startBackgroundMusic();
+            }
+        }
+// ===== Sinkronisasi Video & Background Music =====
+const memoriesVideo = document.getElementById("memoriesVideo");
+
+if (memoriesVideo) {
+
+    // Saat video diputar, hentikan musik background
+    memoriesVideo.addEventListener("play", () => {
+        if (isMusicPlaying) {
+            toggleMusic();
+        }
+    });
+
+    // Saat video selesai, nyalakan lagi musik background
+    memoriesVideo.addEventListener("ended", () => {
+        if (!isMusicPlaying) {
+            startBackgroundMusic();
+        }
+    });
+
+}
+
+        // Interactive Cake Blowing Engine
+        function blowCandle() {
+            const flame = document.getElementById('candleFlame');
+            const aura = document.getElementById('candleAura');
+            const blowBtn = document.getElementById('blowBtn');
+            const postBlow = document.getElementById('postBlowContent');
+
+            flame.style.transition = "transform 1.2s ease-out, opacity 1.2s ease-out";
+            flame.style.transform = "scale(0)";
+            flame.style.opacity = "0";
+            
+            if (aura) {
+                aura.style.transition = "opacity 1.5s ease-out";
+                aura.style.opacity = "0";
+            }
+            
+            blowBtn.classList.add('hidden');
+            
+            // Sparking fireworks celebrate
+            triggerConfettiBurst();
+            setTimeout(triggerConfettiBurst, 400);
+            setTimeout(triggerConfettiBurst, 900);
+
+            // Display heartfelt greeting
+            postBlow.classList.remove('hidden');
+            setTimeout(() => {
+                postBlow.classList.remove('opacity-0');
+                postBlow.classList.add('opacity-100');
+            }, 100);
+        }
+
+        // Virtual Hugs Mechanism
+        function virtualHug() {
+            const messages = [
+                "Peluk super hangat terkirim! 🤗💙",
+                "Aku memelukmu erat dari jauh ❤️",
+                "Semoga harimu sehangat pelukan ini 🌸",
+                "Peluk spesial ulang tahun berhasil dikirim! 🎂✨"
+            ];
+            document.getElementById("hugMessage").innerText = messages[Math.floor(Math.random() * messages.length)];
+            triggerConfettiBurst();
+            playChimeSound();
+        }
+
+        // CELEBRATION CONFETTI ENGINE
+        const confCanvas = document.getElementById('confettiCanvas');
+        const cCtx = confCanvas.getContext('2d');
+        let confParticles = [];
+        let confettiInterval = null;
+
+        function triggerConfettiBurst() {
+            confCanvas.classList.remove('hidden');
+            confCanvas.width = window.innerWidth;
+            confCanvas.height = window.innerHeight;
+
+            for (let i = 0; i < 75; i++) {
+                confParticles.push({
+                    x: Math.random() * confCanvas.width,
+                    y: confCanvas.height + 20, 
+                    size: Math.random() * 6 + 4,
+                    color: `hsl(${Math.random() * 120 + 180}, 85%, 65%)`, // Match blue/cyan theme
+                    speedX: Math.random() * 6 - 3,
+                    speedY: Math.random() * -12 - 8,
+                    gravity: 0.22,
+                    rotation: Math.random() * Math.PI * 2,
+                    rotSpeed: Math.random() * 0.2 - 0.1
+                });
+            }
+
+            if (!confettiInterval) {
+                confettiInterval = setInterval(animateConfetti, 16);
+            }
+            
+            setTimeout(() => {
+                if (confParticles.length === 0) {
+                    clearInterval(confettiInterval);
+                    confettiInterval = null;
+                    confCanvas.classList.add('hidden');
+                }
+            }, 4500);
+        }
+
+        function animateConfetti() {
+            cCtx.clearRect(0, 0, confCanvas.width, confCanvas.height);
+            confParticles.forEach((p, index) => {
+                p.speedY += p.gravity;
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.rotation += p.rotSpeed;
+
+                cCtx.save();
+                cCtx.translate(p.x, p.y);
+                cCtx.rotate(p.rotation);
+                cCtx.fillStyle = p.color;
+                cCtx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                cCtx.restore();
+
+                if (p.y > confCanvas.height + 40) {
+                    confParticles.splice(index, 1);
+                }
+            });
+
+            if (confParticles.length === 0) {
+                clearInterval(confettiInterval);
+                confettiInterval = null;
+                confCanvas.classList.add('hidden');
+            }
+        }
+
+        // WINDOW STARTING TRIGGER
+        window.onload = function() {
+            runCountdown();
+            initParticles();
+            animateParticles();
+        };
+    </script>
+</body>
+</html>
