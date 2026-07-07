@@ -143,19 +143,20 @@
 
         /* The Love Letter - Slides up & expands to a spacious half-screen paper sheet */
         .envelope .letter {
-            position: absolute;
-            left: 5%;
-            top: 20px;
-            width: 90%;
-            height: 95%;
-            background: #FFFFFF;
-            border-radius: 12px;
-            z-index: 2;
-            transform: translateY(0);
-            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.05);
-            transform-origin: center bottom;
-        }
+    position: absolute;
+    left: 7%;
+    top: 55px;
+    width: 86%;
+    height: 58%;
+    background: #FFFFFF;
+    border-radius: 12px;
+    z-index: 2;
+    transform: translateY(0);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.05);
+    transform-origin: center bottom;
+    overflow: hidden;
+}
 
         /* The Triangle Envelope Flap */
         .envelope .flap {
@@ -450,7 +451,7 @@
                 <h3 class="text-2xl sm:text-3xl font-serif font-bold text-ether-deepOcean tracking-wide">
                     <i class="fa-solid fa-camera-retro text-sky-400 mr-2"></i>Manusia Terspesial BagiKu
                 </h3>
-                <p class="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">Setiap foto memiliki sejuta kebahagiaan yang tak akan bisa hilang oleh waktu.</p>
+                <p class="text-xs sm:text-sm text-slate-500 max-w-lg mx-auto">Walaupun foto yang aku tampilkan disini hanya 3, tapi di galeri ku banyak kok 🤤🤤🤤</p>
             </div>
 
             <!-- Polaroid Grid -->
@@ -460,7 +461,11 @@
                 <div class="mx-auto transform -rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 w-full max-w-[280px]">
                     <div class="bg-white p-3 pb-6 shadow-2xl rounded-sm text-slate-700 border border-slate-100">
                         <div class="h-56 overflow-hidden rounded-sm relative group bg-sky-50">
-                            <img id="polaroidImg1" src="upscalemedia-transformed.jpeg" alt="Beautiful Moment 1" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" onerror="this.src='https://placehold.co/400&400/E0F2FE/0284C7?text=Sayangku+1'">
+<img
+id="polaroidImg1"
+src="upscalemedia-transformed.jpeg"
+class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 cursor-pointer"
+onclick="openPhoto(this,'Senyuman Terindah Anak Bayi Aku 💙')">
                             <div class="absolute inset-0 bg-sky-300/10 mix-blend-color"></div>
                         </div>
                         <p class="font-serif text-center mt-4 text-[11px] font-semibold tracking-wide text-slate-500 italic">Senyuman Terindah Anak Bayi Aku</p>
@@ -471,8 +476,11 @@
                 <div class="mx-auto transform rotate-2 hover:rotate-0 hover:scale-105 transition-all duration-300 w-full max-w-[290px] z-10">
                     <div class="bg-white p-3 pb-6 shadow-2xl rounded-sm text-slate-700 border-4 border-sky-200">
                         <div class="h-60 overflow-hidden rounded-sm relative group bg-sky-50">
-                            <img id="polaroidImg2" src="WhatsApp Image 2026-06-07 at 09.04.32 (1).jpeg" alt="Beautiful Moment 2" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" onerror="this.src='https://placehold.co/400&400/E0F2FE/0284C7?text=Sayangku+2'">
-                            <div class="absolute inset-0 bg-cyan-300/10 mix-blend-color"></div>
+<img
+id="polaroidImg2"
+src="WhatsApp Image 2026-06-07 at 09.04.32 (1).jpeg"
+class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 cursor-pointer"
+onclick="openPhoto(this,'Cintaku Selamanya 💙')">                            <div class="absolute inset-0 bg-cyan-300/10 mix-blend-color"></div>
                         </div>
                         <p class="font-serif text-center mt-4 text-xs font-extrabold tracking-wide text-slate-600">Cintaku Selamanya 💙</p>
                     </div>
@@ -482,8 +490,11 @@
                 <div class="mx-auto transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300 w-full max-w-[280px]">
                     <div class="bg-white p-3 pb-6 shadow-2xl rounded-sm text-slate-700 border border-slate-100">
                         <div class="h-56 overflow-hidden rounded-sm relative group bg-sky-50">
-                            <img id="polaroidImg3" src="WhatsApp Image 2026-06-07 at 09.04.30.jpeg" alt="Beautiful Moment 3" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" onerror="this.src='https://placehold.co/400&400/E0F2FE/0284C7?text=Sayangku+3'">
-                            <div class="absolute inset-0 bg-sky-300/10 mix-blend-color"></div>
+<img
+id="polaroidImg3"
+src="WhatsApp Image 2026-06-07 at 09.04.30.jpeg"
+class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 cursor-pointer"
+onclick="openPhoto(this,'Mirror Selfies 💙')">                            <div class="absolute inset-0 bg-sky-300/10 mix-blend-color"></div>
                         </div>
                         <p class="font-serif text-center mt-4 text-[11px] font-semibold tracking-wide text-slate-500 italic">Mirror Selfies 💙</p>
                     </div>
@@ -525,7 +536,7 @@
 
     <div class="p-4 bg-sky-50 text-center border-t border-sky-100">
         <p class="text-xs text-ether-ocean font-serif italic">
-            "Terima kasih sudah menjadi bagian paling indah dalam hidupku sayang."
+            "Terima kasih sudah menjadi bagian paling indah dalam hidupku sayang. Kalau suatu hari nanti kita menonton video ini lagi, semoga kita bisa tersenyum dan berkata: ternyata kita berdua udah bertahan sejauh ini yaa."
         </p>
     </div>
 </div>
@@ -1169,7 +1180,33 @@ if (memoriesVideo) {
                 confCanvas.classList.add('hidden');
             }
         }
+function openPhoto(img, caption) {
 
+    document.getElementById("modalImg").src = img.src;
+    document.getElementById("modalCaption").innerText = caption;
+
+    const modal = document.getElementById("photoModal");
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+}
+
+function closePhoto() {
+
+    const modal = document.getElementById("photoModal");
+
+    modal.classList.remove("flex");
+    modal.classList.add("hidden");
+}
+
+// Klik area hitam untuk menutup
+document.getElementById("photoModal").addEventListener("click", function(e){
+
+    if(e.target === this){
+        closePhoto();
+    }
+
+});
         // WINDOW STARTING TRIGGER
         window.onload = function() {
             runCountdown();
@@ -1177,5 +1214,25 @@ if (memoriesVideo) {
             animateParticles();
         };
     </script>
+    <!-- PHOTO MODAL -->
+<div id="photoModal"
+class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-[999] p-5">
+
+    <div class="relative max-w-3xl w-full text-center">
+
+        <button onclick="closePhoto()"
+        class="absolute -top-12 right-0 text-white text-3xl">
+            &times;
+        </button>
+
+        <img id="modalImg"
+        class="w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl">
+
+        <p id="modalCaption"
+        class="text-white mt-5 text-lg font-serif italic"></p>
+
+    </div>
+
+</div>
 </body>
 </html>
