@@ -177,25 +177,8 @@
             z-index: 1;
         }
 
-        /* MAGICAL EXPANSION: Letter occupies half-screen width and comfortable height when open */
-        .envelope.open .letter {
-            transform: translateY(-120px) scale(1.4);
-            z-index: 45;
-            height: 240px; /* Expands height */
-            width: 140%;   /* Expands width */
-            left: -20%;    /* Recenter expanded sheet */
-            box-shadow: 0 25px 50px -12px rgba(12, 74, 110, 0.3);
-        }
-
-        /* Larger viewports get even wider reading area (up to half screen) */
-        @media (min-width: 768px) {
-            .envelope.open .letter {
-                transform: translateY(-160px) scale(1.6);
-                height: 300px;
-                width: 160%;
-                left: -30%;
-            }
-        }
+{ 
+    .envelope.open .letter { transform: translateY(-110px) scale(1); z-index: 45; width: 92vw; max-width: 360px; height: 300px; left: 50%; top: -40px; transform-origin: center top; translate: -50% 0; box-shadow: 0 25px 50px -12px rgba(12, 74, 110, 0.3); } /* Tablet & desktop */ @media (min-width: 768px) { .envelope.open .letter { width: 520px; max-width: 520px; height: 340px; top: -70px; } }`}
     </style>
 </head>
 <body class="bg-gradient-to-b from-sky-50 to-blue-100 text-slate-800 font-sans overflow-x-hidden relative min-h-screen flex items-center justify-center">
