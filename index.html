@@ -177,8 +177,29 @@
             z-index: 1;
         }
 
-{ 
-    .envelope.open .letter { transform: translateY(-110px) scale(1); z-index: 45; width: 92vw; max-width: 360px; height: 300px; left: 50%; top: -40px; transform-origin: center top; translate: -50% 0; box-shadow: 0 25px 50px -12px rgba(12, 74, 110, 0.3); } /* Tablet & desktop */ @media (min-width: 768px) { .envelope.open .letter { width: 520px; max-width: 520px; height: 340px; top: -70px; } }`}
+        /* MAGICAL EXPANSION: Letter occupies half-screen width and comfortable height when open */
+        /* HP */
+.envelope.open .letter{
+    transform: translateY(-90px) scale(1);
+    width:92%;
+    left:4%;
+    height:320px;
+    max-height:55vh;
+    z-index:45;
+    overflow-y:auto;
+    box-shadow:0 20px 35px rgba(12,74,110,.25);
+}
+
+/* Tablet & Desktop */
+@media (min-width:768px){
+    .envelope.open .letter{
+        transform: translateY(-130px) scale(1);
+        width:95%;
+        left:2.5%;
+        height:420px;
+        max-height:70vh;
+    }
+}
     </style>
 </head>
 <body class="bg-gradient-to-b from-sky-50 to-blue-100 text-slate-800 font-sans overflow-x-hidden relative min-h-screen flex items-center justify-center">
@@ -384,8 +405,8 @@
                         <div class="flap"></div>
                         
                         <!-- Expanded Paper Sheet letter (Opens up to half screen space width) -->
-                        <div class="letter rounded-lg p-5 flex flex-col justify-between text-left shadow-inner overflow-hidden">
-                            <div class="space-y-2 overflow-y-auto max-h-[170px] md:max-h-[220px] scrollbar-thin">
+                        <div class="letter rounded-lg p-4 flex flex-col text-left shadow-inner overflow-y-auto">
+                            <div class="space-y-2 flex-1">
                                 <h4 id="letterTitle" class="font-serif font-extrabold text-ether-deepOcean text-xs sm:text-sm border-b border-sky-100 pb-1">Untuk Manusia Terspesial Di Hidupku,</h4>
                                 <p id="letterBody" class="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-serif italic">
                                     Selamat ulang tahun yaa sayang. Kamu tau ga yang? semenjak kamu hadir, hidupku beneran berubah menjadi lebih baik yang, banyak hal buruk yang udah aku tinggalkan yang, walaupun masih ada sedikit yang masih terulang sayang, tapi aku tetap berusaha kok yang buat berubah menjadi lebih baik sayang. Makasih yaa sayang karena selalu sabar dengan sifat egois aku, ga mau ngalahnya aku, tapi alhamdulillah aku sekarang udah belajar menjadi lebih baik, udah bisa sedikit demi sedikit memahami kamu sayang. Intinya makasih yaa sayang udah hadir di hidup aku sayang. I love u forever sayang. 💙
