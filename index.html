@@ -208,7 +208,7 @@
     <audio id="bgMusic" loop>
         <source src="shapeof.mp3" type="audio/mpeg">
     </audio>
-
+<audio id="playlistPlayer"></audio>
     <!-- Floating background interactive canvas -->
     <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-80"></canvas>
 
@@ -504,7 +504,7 @@ onclick="openPhoto(this,'Mirror Selfies 💙')">                            <div
 
             <!-- Page Navigation Button -->
             <button onclick="goToPage(6)" class="px-8 py-3 bg-white/80 border border-sky-100 hover:border-sky-400 rounded-full hover:bg-white active:scale-95 transition-all text-xs font-serif font-bold text-ether-ocean flex items-center gap-2 shadow-sm">
-                <span>Lanjut Putar Video Asik Asik Kita 🤤</span>
+                <span>Lanjut Putar Video Kenangan 🎬</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
         </section>
@@ -550,94 +550,104 @@ onclick="openPhoto(this,'Mirror Selfies 💙')">                            <div
         </section>
 
 
-        <!-- ================= PAGE 7: OUTRO & CAKE INTERACTIVE BLOWING ================= -->
-        <section id="page-7" class="w-full max-w-xl frost-panel rounded-[2rem] p-8 md:p-12 text-center border border-white/60 shadow-2xl hidden flex-col justify-center items-center space-y-8 opacity-0 transition-all duration-700">
-            
-            <div class="space-y-2">
-                <h4 class="text-2xl sm:text-3xl font-serif font-bold text-ether-deepOcean">Make A Wish 🎂</h4>
-                <p class="text-xs text-slate-500 leading-relaxed max-w-xs mx-auto">Pikirkan satu permohonan paling indah di hatimu sayang, lalu klik tombol untuk meniup lilinnya!</p>
-            </div>
+        <section id="page-7"
+class="w-full max-w-md hidden flex-col items-center justify-center opacity-0 transition-all duration-700">
 
-            <!-- Birthday Cake SVG Simulation -->
-            <div class="relative w-44 h-44 mx-auto flex items-center justify-center">
-                <div id="candleAura" class="absolute top-[10%] w-20 h-20 bg-amber-300/30 rounded-full blur-xl animate-pulse z-0"></div>
-                
-                <svg id="cakeSvg" viewBox="0 0 200 200" class="w-full h-full z-10">
-                    <!-- Cake Plate -->
-                    <path d="M 20,160 Q 100,185 180,160 L 165,175 Q 100,195 35,175 Z" fill="#0284c7" class="opacity-90"/>
-                    <ellipse cx="100" cy="165" rx="80" ry="15" fill="#0369a1"/>
-                    
-                    <!-- Cake Bottom Layer -->
-                    <rect x="35" y="105" width="130" height="50" rx="10" fill="#bae6fd"/>
-                    <path d="M 35,130 Q 100,150 165,130 L 165,155 Q 100,165 35,155 Z" fill="#38bdf8"/>
-                    
-                    <!-- Cake Top Layer Decor -->
-                    <rect x="50" y="70" width="100" height="40" rx="8" fill="#e0f2fe"/>
-                    <path d="M 50,90 Q 100,105 150,90 L 150,110 Q 100,115 50,110 Z" fill="#7dd3fc"/>
-                    
-                    <!-- Cream Drips -->
-                    <path d="M 50,75 C 60,85 70,85 80,75 C 90,85 100,85 110,75 C 120,85 130,85 140,75 C 150,85 150,75 150,75 L 150,70 L 50,70 Z" fill="#ffffff" />
-                    
-                    <!-- Cute Strawberries / Candies on top -->
-                    <circle cx="65" cy="65" r="8" fill="#ef4444"/>
-                    <circle cx="100" cy="65" r="8" fill="#38bdf8"/>
-                    <circle cx="135" cy="65" r="8" fill="#fbcfe8"/>
-                    
-                    <!-- Candle Base -->
-                    <rect x="97" y="35" width="6" height="30" fill="#0284c7" rx="2"/>
-                    <line x1="100" y1="35" x2="100" y2="30" stroke="#ef4444" stroke-width="2"/>
-                    
-                    <!-- Candle Flame -->
-                    <path id="candleFlame" class="animate-bounce origin-bottom" d="M 100,30 C 95,25 95,15 100,8 C 105,15 105,25 100,30 Z" fill="url(#flameGradient)" filter="url(#glow)"/>
-                    
-                    <defs>
-                        <radialGradient id="flameGradient" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="#fef08a"/>
-                            <stop offset="50%" stop-color="#f59e0b"/>
-                            <stop offset="100%" stop-color="#ef4444"/>
-                        </radialGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                </svg>
-                
-                <!-- Blow Button Overlay -->
-                <button id="blowBtn" onclick="blowCandle()" class="absolute top-[5%] inset-x-0 w-max mx-auto bg-gradient-to-r from-ether-ocean to-ether-aqua hover:brightness-110 text-white font-serif font-bold px-4 py-2 rounded-full text-xs shadow-lg flex items-center gap-1 transform hover:scale-105 active:scale-95 transition-all animate-pulse">
-                    <i class="fa-solid fa-wind"></i> Tiup Lilin!
-                </button>
-            </div>
+<div class="bg-[#6E475A] rounded-3xl p-6 shadow-2xl w-full">
 
-            <!-- Success Post-blowing Message -->
-            <div id="postBlowContent" class="hidden opacity-0 space-y-4 max-w-sm mx-auto transition-opacity duration-1000">
-                <div class="inline-flex items-center justify-center p-3 rounded-full bg-emerald-100 text-emerald-600 text-xl mb-1">
-                    <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <h4 class="font-serif text-xl font-bold text-emerald-700">Permohonan Terkirim! ✨</h4>
-                <p class="text-[11px] sm:text-xs text-slate-500 italic leading-relaxed">
-                    "Semoga semua doa dan harapan tulusmu hari ini didengar oleh semesta dan dikabulkan di waktu terbaik-Nya ya Annisa Mutiara Rizki tercinta..."
+    <!-- Header -->
+    <div class="flex gap-4">
+
+        <img
+        src="upscalemedia-transformed.jpeg"
+        class="w-28 h-28 rounded-2xl object-cover shadow-lg">
+
+        <div class="flex flex-col justify-center text-white">
+
+            <h2 class="text-4xl font-bold">
+                for u
+            </h2>
+
+            <p class="text-white/70">
+                Lovee ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Playlist -->
+    <div class="mt-8 space-y-3">
+
+        <button onclick="playPlaylistSong(0)"
+        class="w-full bg-black/10 rounded-xl p-4 flex justify-between items-center hover:bg-black/20 transition">
+
+            <div class="text-left">
+
+                <h3 class="text-white font-semibold">
+                    About You
+                </h3>
+
+                <p class="text-white/60 text-sm">
+                    The 1975
                 </p>
+
             </div>
 
-            <!-- Heartwarming Outro Note -->
-            <div id="hug-box" class="space-y-4 pt-6 border-t border-sky-100 w-full">
-                <h4 class="text-lg font-serif font-bold text-ether-deepOcean">Happy Birthday, Sayang 🎂❤️</h4>
-                <p class="text-slate-500 italic text-[11px] max-w-xs mx-auto leading-relaxed">
-                    "Kalau suatu hari nanti kita menonton video ini lagi, semoga kita bisa tersenyum dan berkata: ternyata kita berdua udah bertahan sejauh ini yaa."
+            <i class="fa-solid fa-play text-white"></i>
+
+        </button>
+
+        <button onclick="playPlaylistSong(1)"
+        class="w-full bg-black/10 rounded-xl p-4 flex justify-between items-center hover:bg-black/20 transition">
+
+            <div class="text-left">
+
+                <h3 class="text-white font-semibold">
+                    My Love
+                </h3>
+
+                <p class="text-white/60 text-sm">
+                    Westlife
                 </p>
-                
-                <div class="pt-2 flex flex-col items-center gap-3">
-                    <button onclick="virtualHug()" class="px-6 py-2.5 bg-gradient-to-r from-ether-ocean to-ether-aqua hover:brightness-110 text-white rounded-full font-serif font-bold text-xs shadow-md transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane"></i> Kirim Pelukan Virtual 🤗
-                    </button>
-                    <p id="hugMessage" class="text-xs text-ether-ocean font-bold italic h-4 transition-all duration-300"></p>
-                </div>
+
             </div>
-        </section>
+
+            <i class="fa-solid fa-play text-white"></i>
+
+        </button>
+
+        <button onclick="playPlaylistSong(2)"
+        class="w-full bg-black/10 rounded-xl p-4 flex justify-between items-center hover:bg-black/20 transition">
+
+            <div class="text-left">
+
+                <h3 class="text-white font-semibold">
+                    Semua Aku Dirayakan
+                </h3>
+
+                <p class="text-white/60 text-sm">
+                    Nadin Amizah
+                </p>
+
+            </div>
+
+            <i class="fa-solid fa-play text-white"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+<button onclick="goToPage(8)"
+class="mt-8 bg-blue-700 text-white rounded-full px-10 py-4 font-bold hover:scale-105 transition">
+
+    Lanjut →
+
+</button>
+
+</section>
 
     </main>
 
@@ -1207,6 +1217,34 @@ document.getElementById("photoModal").addEventListener("click", function(e){
     }
 
 });
+const playlist = [
+
+{
+title:"About You",
+src:"aboutyou.mp3"
+},
+
+{
+title:"My Love",
+src:"mylove.mp3"
+},
+
+{
+title:"Semua Aku Dirayakan",
+src:"semuaaku.mp3"
+}
+
+];
+
+function playPlaylistSong(index){
+
+    const player=document.getElementById("playlistPlayer");
+
+    player.src=playlist[index].src;
+
+    player.play();
+
+}
         // WINDOW STARTING TRIGGER
         window.onload = function() {
             runCountdown();
