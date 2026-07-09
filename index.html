@@ -873,17 +873,19 @@ Syarif —
             });
 if(pageNum === 7){
 
-    // Matikan background music
     if(isMusicPlaying){
         toggleMusic();
     }
 
-    // Matikan playlist juga
-    playlistPlayer.pause();
-    playlistPlayer.currentTime = 0;
+    const player = document.getElementById("playlistPlayer");
+
+    if(player){
+        player.pause();
+        player.currentTime = 0;
+    }
 
     document.querySelectorAll(".playlist-btn i").forEach(icon=>{
-        icon.className="fa-solid fa-play text-white text-xl";
+        icon.className = "fa-solid fa-play text-white text-xl";
     });
 
 }
