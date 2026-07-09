@@ -1268,59 +1268,57 @@ let currentSong = -1;
 
 function togglePlaylist(index, btn){
 
-    // Matikan musik background
     const bg = document.getElementById("bgMusic");
+
+    // matikan musik background
     bg.pause();
     bg.currentTime = 0;
     isMusicPlaying = false;
 
-    // Jika lagu yang sama sedang dimainkan
+    // jika tombol lagu yang sama ditekan
     if(currentSong === index){
 
         if(playlistPlayer.paused){
 
             playlistPlayer.play();
-            btn.querySelector("i").className="fa-solid fa-pause text-white text-xl";
+            btn.querySelector("i").className =
+            "fa-solid fa-pause text-2xl text-white";
 
         }else{
 
             playlistPlayer.pause();
-            btn.querySelector("i").className="fa-solid fa-play text-white text-xl";
+            btn.querySelector("i").className =
+            "fa-solid fa-play text-2xl text-white";
 
         }
 
         return;
     }
 
-    // Lagu baru
+    // reset semua icon
+    document.querySelectorAll(".playlist-btn i").forEach(icon=>{
+        icon.className="fa-solid fa-play text-2xl text-white";
+    });
+
     currentSong = index;
 
-    playlistPlayer.pause();
-    playlistPlayer.currentTime = 0;
-
     playlistPlayer.src = playlist[index].src;
-    playlistPlayer.load();
 
     playlistPlayer.play().then(()=>{
 
-        document.querySelectorAll(".playlist-btn i").forEach(icon=>{
-    icon.className="fa-solid fa-play text-white text-xl";
-});
+        btn.querySelector("i").className =
+        "fa-solid fa-pause text-2xl text-white";
 
-        btn.querySelector("i").className="fa-solid fa-pause text-white text-xl";
-
-    }).catch(err=>{
-        console.log(err);
-        alert("Gagal memutar lagu.");
     });
 
 }
-
-playlistPlayer.addEventListener("ended",()=>{
+playlistPlayer.addEventListener("ended", () => {
 
     document.querySelectorAll(".playlist-btn i").forEach(icon=>{
-    icon.className="fa-solid fa-play text-white text-xl";
-});
+        icon.className = "fa-solid fa-play text-2xl text-white";
+    });
+
+    currentSong = -1;
 
 });
         // WINDOW STARTING TRIGGER
