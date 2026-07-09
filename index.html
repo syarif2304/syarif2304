@@ -551,179 +551,105 @@ onclick="openPhoto(this,'Mirror Selfies 💙')">                            <div
 
 
 <section id="page-7"
-class="w-full max-w-5xl hidden flex-col items-center justify-center opacity-0 transition-all duration-700">
+class="w-full max-w-3xl hidden flex-col items-center justify-center opacity-0 transition-all duration-700">
 
-<div class="w-full frost-panel rounded-[2rem] p-8 shadow-2xl">
+<div class="w-full rounded-[35px] bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 p-8 shadow-2xl">
 
     <!-- Header -->
-    <div class="flex flex-col md:flex-row items-center gap-8">
+    <div class="flex items-center gap-6 mb-8">
 
-        <!-- Cover -->
-        <img
-        src="upscalemedia-transformed.jpeg"
-        class="w-60 h-60 rounded-3xl object-cover shadow-2xl">
+        <img src="upscalemedia-transformed.jpeg"
+        class="w-32 h-32 rounded-3xl object-cover shadow-xl">
 
-        <!-- Info -->
-        <div class="flex-1 text-center md:text-left">
+        <div>
 
-            <p class="uppercase tracking-[6px] text-sky-500 text-xs font-bold">
-                Playlist Spesial
+            <p class="uppercase tracking-[5px] text-white/70 text-xs">
+                Playlist
             </p>
 
-            <h1 class="text-5xl font-bold text-sky-700 mt-3">
-                For Annisa 💙
+            <h1 class="text-4xl font-bold text-white mt-2">
+                For My Love 💙
             </h1>
 
-            <p class="text-slate-500 mt-4 leading-7">
-                Lagu-lagu yang selalu mengingatkanku sama kamu.
-                Semoga setiap nada yang diputar bisa menjadi kenangan
-                yang selalu kita ingat bersama.
+            <p class="text-white/80 mt-2">
+                Pilih lagu favoritmu ya sayang...
             </p>
 
         </div>
 
     </div>
 
-    <!-- Playlist -->
-    <div class="mt-10 space-y-4">
+    <!-- Lagu 1 -->
+    <button
+    onclick="togglePlaylist(0,this)"
+    class="playlist-btn w-full bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 mb-4 flex justify-between items-center">
 
-        <!-- Song -->
-        <button onclick="playPlaylistSong(0)"
-        class="group w-full bg-white rounded-2xl p-5 flex justify-between items-center shadow hover:shadow-xl transition hover:scale-[1.01]">
+        <div class="text-left">
 
-            <div class="flex items-center gap-5">
+            <h3 class="text-white text-lg font-bold">
+                About You
+            </h3>
 
-                <div class="w-14 h-14 rounded-xl bg-sky-100 flex items-center justify-center">
-                    🎵
-                </div>
-
-                <div class="text-left">
-
-                    <h3 class="font-bold text-slate-700">
-                        About You
-                    </h3>
-
-                    <p class="text-slate-400 text-sm">
-                        The 1975
-                    </p>
-
-                </div>
-
-            </div>
-
-            <i class="fa-solid fa-circle-play text-3xl text-sky-500 group-hover:scale-110 transition"></i>
-
-        </button>
-
-        <!-- Song -->
-        <button onclick="playPlaylistSong(1)"
-        class="group w-full bg-white rounded-2xl p-5 flex justify-between items-center shadow hover:shadow-xl transition hover:scale-[1.01]">
-
-            <div class="flex items-center gap-5">
-
-                <div class="w-14 h-14 rounded-xl bg-sky-100 flex items-center justify-center">
-                    💙
-                </div>
-
-                <div class="text-left">
-
-                    <h3 class="font-bold text-slate-700">
-                        Shape Of My Heart
-                    </h3>
-
-                    <p class="text-slate-400 text-sm">
-                        Westlife
-                    </p>
-
-                </div>
-
-            </div>
-
-            <i class="fa-solid fa-circle-play text-3xl text-sky-500 group-hover:scale-110 transition"></i>
-
-        </button>
-
-        <!-- Song -->
-        <button onclick="playPlaylistSong(2)"
-        class="group w-full bg-white rounded-2xl p-5 flex justify-between items-center shadow hover:shadow-xl transition hover:scale-[1.01]">
-
-            <div class="flex items-center gap-5">
-
-                <div class="w-14 h-14 rounded-xl bg-sky-100 flex items-center justify-center">
-                    🤍
-                </div>
-
-                <div class="text-left">
-
-                    <h3 class="font-bold text-slate-700">
-                        Semua Aku Dirayakan
-                    </h3>
-
-                    <p class="text-slate-400 text-sm">
-                        Nadin Amizah
-                    </p>
-
-                </div>
-
-            </div>
-
-            <i class="fa-solid fa-circle-play text-3xl text-sky-500 group-hover:scale-110 transition"></i>
-
-        </button>
-
-    </div>
-
-    <!-- Now Playing -->
-    <div class="mt-10 rounded-3xl bg-gradient-to-r from-sky-500 to-cyan-500 p-8 text-white shadow-xl">
-
-        <p class="uppercase text-xs tracking-[4px] opacity-80">
-            NOW PLAYING
-        </p>
-
-        <h2 id="nowTitle"
-        class="text-3xl font-bold mt-2">
-            Belum ada lagu
-        </h2>
-
-        <p id="nowArtist"
-        class="opacity-90 mt-1">
-            Klik salah satu lagu di atas
-        </p>
-
-        <div class="flex justify-center gap-5 mt-8">
-
-            <button
-            onclick="playlistPlayer.play()"
-            class="bg-white text-sky-700 rounded-full w-16 h-16 text-xl hover:scale-110 transition">
-
-                <i class="fa-solid fa-play"></i>
-
-            </button>
-
-            <button
-            onclick="playlistPlayer.pause()"
-            class="bg-white text-sky-700 rounded-full w-16 h-16 text-xl hover:scale-110 transition">
-
-                <i class="fa-solid fa-pause"></i>
-
-            </button>
+            <p class="text-white/70">
+                The 1975
+            </p>
 
         </div>
 
-    </div>
+        <i class="fa-solid fa-play text-2xl text-white"></i>
 
-    <!-- Next -->
-    <div class="text-center mt-10">
+    </button>
 
-        <button onclick="goToPage(8)"
-        class="bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-10 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition">
+    <!-- Lagu 2 -->
+    <button
+    onclick="togglePlaylist(1,this)"
+    class="playlist-btn w-full bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 mb-4 flex justify-between items-center">
 
-            Halaman Terakhir →
-        </button>
+        <div class="text-left">
 
-    </div>
+            <h3 class="text-white text-lg font-bold">
+                Shape Of My Heart
+            </h3>
+
+            <p class="text-white/70">
+                Backstreet Boys
+            </p>
+
+        </div>
+
+        <i class="fa-solid fa-play text-2xl text-white"></i>
+
+    </button>
+
+    <!-- Lagu 3 -->
+    <button
+    onclick="togglePlaylist(2,this)"
+    class="playlist-btn w-full bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 flex justify-between items-center">
+
+        <div class="text-left">
+
+            <h3 class="text-white text-lg font-bold">
+                Semua Aku Dirayakan
+            </h3>
+
+            <p class="text-white/70">
+                Nadin Amizah
+            </p>
+
+        </div>
+
+        <i class="fa-solid fa-play text-2xl text-white"></i>
+
+    </button>
 
 </div>
+
+<button onclick="goToPage(8)"
+class="mt-8 bg-sky-600 hover:bg-sky-700 text-white px-10 py-4 rounded-full font-bold transition">
+
+    Lanjut →
+
+</button>
 
 </section>
 
@@ -1372,47 +1298,47 @@ src:"semuaaku.mp3"
 
 let currentSong = -1;
 
-function playPlaylistSong(index){
+function togglePlaylist(index,btn){
 
-    if(typeof isMusicPlaying !== "undefined" && isMusicPlaying){
+    // matikan musik background
+    if(isMusicPlaying){
         toggleMusic();
     }
 
-    currentSong = index;
+    // kalau lagu yang sama sedang diputar
+    if(currentSong===index && !playlistPlayer.paused){
 
-    playlistPlayer.pause();
-    playlistPlayer.currentTime = 0;
-    playlistPlayer.src = playlist[index].src;
-    playlistPlayer.load();
+        playlistPlayer.pause();
 
-    playlistPlayer.play().then(()=>{
-        updateNowPlaying();
-    }).catch(err=>{
-        console.log(err);
-        alert("Lagu tidak dapat diputar. Pastikan file MP3 berada di folder yang sama dengan index.html");
-    });
+        btn.querySelector("i").className="fa-solid fa-play text-white text-xl";
 
-}
-
-function updateNowPlaying(){
-
-    document.getElementById("nowTitle").textContent =
-    playlist[currentSong].title;
-
-    document.getElementById("nowArtist").textContent =
-    playlist[currentSong].artist;
-
-}
-
-playlistPlayer.addEventListener("ended",function(){
-
-    currentSong++;
-
-    if(currentSong >= playlist.length){
-        currentSong = 0;
+        return;
     }
 
-    playPlaylistSong(currentSong);
+    currentSong=index;
+
+    playlistPlayer.src=playlist[index].src;
+
+    playlistPlayer.play();
+
+    // reset semua icon
+    document.querySelectorAll("#page-7 button i").forEach(icon=>{
+
+        icon.className="fa-solid fa-play text-white text-xl";
+
+    });
+
+    btn.querySelector("i").className="fa-solid fa-pause text-white text-xl";
+
+}
+
+playlistPlayer.addEventListener("ended",()=>{
+
+    document.querySelectorAll("#page-7 button i").forEach(icon=>{
+
+        icon.className="fa-solid fa-play text-white text-xl";
+
+    });
 
 });
         // WINDOW STARTING TRIGGER
