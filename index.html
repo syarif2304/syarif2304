@@ -181,22 +181,20 @@
         /* MAGICAL EXPANSION: Letter occupies half-screen width and comfortable height when open */
         /* HP */
 .envelope.open .letter{
-    transform: translateY(-230px);
-    width:92%;
-    left:4%;
-    height:min(330px,60vh);
+    transform: translateY(-120px);
+    width:86%;
+    left:7%;
+    height:58%;
     overflow-y:auto;
     z-index:45;
 }
 
-/* Tablet & Desktop */
 @media (min-width:768px){
     .envelope.open .letter{
-        transform: translateY(-130px) scale(1);
-        width:95%;
-        left:2.5%;
-        height:420px;
-        max-height:70vh;
+        transform: translateY(-120px);
+        width:86%;
+        left:7%;
+        height:58%;
     }
 }
     </style>
