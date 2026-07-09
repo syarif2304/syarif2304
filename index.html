@@ -150,7 +150,7 @@
     height: 58%;
     background: #FFFFFF;
     border-radius: 12px;
-    z-index: 2;
+    z-index: 4;
     transform: translateY(0);
     transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.05);
@@ -181,11 +181,10 @@
         /* MAGICAL EXPANSION: Letter occupies half-screen width and comfortable height when open */
         /* HP */
 .envelope.open .letter{
-    transform: translateY(-220px) scale(1);
+    transform: translateY(-230px);
     width:92%;
     left:4%;
-    height:330px;
-    max-height:60vh;
+    height:min(330px,60vh);
     overflow-y:auto;
     z-index:45;
 }
@@ -205,10 +204,10 @@
 <body class="bg-gradient-to-b from-sky-50 to-blue-100 text-slate-800 font-sans overflow-x-hidden relative min-h-screen flex items-center justify-center">
 
     <!-- Background Music element -->
-    <audio id="bgMusic" loop>
+<audio id="bgMusic" loop preload="metadata">
         <source src="shapeof.mp3" type="audio/mpeg">
     </audio>
-<audio id="playlistPlayer"></audio>
+<audio id="playlistPlayer" preload="metadata"></audio>
     <!-- Floating background interactive canvas -->
     <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-80"></canvas>
 
@@ -424,9 +423,9 @@
                         </div>
 
                         <!-- Front cover of envelope body -->
-                        <div class="absolute bottom-0 left-0 w-0 h-0 border-t-[80px] border-t-transparent border-b-[80px] border-b-transparent border-l-[140px] border-l-[#A1DCFF] w-[50%] z-2 rounded-bl-xl"></div>
-                        <div class="absolute bottom-0 right-0 w-0 h-0 border-t-[80px] border-t-transparent border-b-[80px] border-b-transparent border-r-[140px] border-r-[#A1DCFF] w-[50%] z-2 rounded-br-xl"></div>
-                        <div class="absolute bottom-0 left-0 w-full h-[96px] bg-[#B0E2FF] z-1 rounded-b-xl"></div>
+                        <div class="absolute bottom-0 left-0 w-0 h-0 border-t-[80px] border-t-transparent border-b-[80px] border-b-transparent border-l-[140px] border-l-[#A1DCFF] w-[50%] z-10 rounded-bl-xl"></div>
+                        <div class="absolute bottom-0 right-0 w-0 h-0 border-t-[80px] border-t-transparent border-b-[80px] border-b-transparent border-r-[140px] border-r-[#A1DCFF] w-[50%] z-10 rounded-br-xl"></div>
+                        <div class="absolute bottom-0 left-0 w-full h-[96px] bg-[#B0E2FF] z-0 rounded-b-xl"></div>
                     </div>
                 </div>
 
@@ -601,25 +600,25 @@ class="w-full max-w-3xl hidden flex-col items-center justify-center opacity-0 tr
     </button>
 
     <!-- Lagu 2 -->
-    <button
-    onclick="togglePlaylist(1,this)"
-    class="playlist-btn w-full bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 mb-4 flex justify-between items-center">
+<button
+onclick="togglePlaylist(1,this)"
+class="playlist-btn w-full bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 mb-4 flex justify-between items-center">
 
-        <div class="text-left">
+    <div class="text-left">
 
-            <h3 class="text-white text-lg font-bold">
-                Shape Of My Heart
-            </h3>
+        <h3 class="text-white text-lg font-bold">
+            you!
+        </h3>
 
-            <p class="text-white/70">
-                Backstreet Boys
-            </p>
+        <p class="text-white/70">
+            LANY
+        </p>
 
-        </div>
+    </div>
 
-        <i class="fa-solid fa-play text-2xl text-white"></i>
+    <i class="fa-solid fa-play text-2xl text-white"></i>
 
-    </button>
+</button>
 
     <!-- Lagu 3 -->
     <button
@@ -873,9 +872,18 @@ Syarif —
             });
 if(pageNum === 7){
 
+    // Matikan background music
     if(isMusicPlaying){
         toggleMusic();
     }
+
+    // Matikan playlist juga
+    playlistPlayer.pause();
+    playlistPlayer.currentTime = 0;
+
+    document.querySelectorAll(".playlist-btn i").forEach(icon=>{
+        icon.className="fa-solid fa-play text-white text-xl";
+    });
 
 }
             // Fade in target page
@@ -1141,49 +1149,7 @@ if (memoriesVideo) {
 
 }
 
-        // Interactive Cake Blowing Engine
-        function blowCandle() {
-            const flame = document.getElementById('candleFlame');
-            const aura = document.getElementById('candleAura');
-            const blowBtn = document.getElementById('blowBtn');
-            const postBlow = document.getElementById('postBlowContent');
 
-            flame.style.transition = "transform 1.2s ease-out, opacity 1.2s ease-out";
-            flame.style.transform = "scale(0)";
-            flame.style.opacity = "0";
-            
-            if (aura) {
-                aura.style.transition = "opacity 1.5s ease-out";
-                aura.style.opacity = "0";
-            }
-            
-            blowBtn.classList.add('hidden');
-            
-            // Sparking fireworks celebrate
-            triggerConfettiBurst();
-            setTimeout(triggerConfettiBurst, 400);
-            setTimeout(triggerConfettiBurst, 900);
-
-            // Display heartfelt greeting
-            postBlow.classList.remove('hidden');
-            setTimeout(() => {
-                postBlow.classList.remove('opacity-0');
-                postBlow.classList.add('opacity-100');
-            }, 100);
-        }
-
-        // Virtual Hugs Mechanism
-        function virtualHug() {
-            const messages = [
-                "Peluk super hangat terkirim! 🤗💙",
-                "Aku memelukmu erat dari jauh ❤️",
-                "Semoga harimu sehangat pelukan ini 🌸",
-                "Peluk spesial ulang tahun berhasil dikirim! 🎂✨"
-            ];
-            document.getElementById("hugMessage").innerText = messages[Math.floor(Math.random() * messages.length)];
-            triggerConfettiBurst();
-            playChimeSound();
-        }
 
         // CELEBRATION CONFETTI ENGINE
         const confCanvas = document.getElementById('confettiCanvas');
@@ -1275,70 +1241,83 @@ document.getElementById("photoModal").addEventListener("click", function(e){
         closePhoto();
     }
 
-});
-const playlistPlayer = document.getElementById("playlistPlayer");
+});const playlistPlayer = document.getElementById("playlistPlayer");
 
 const playlist = [
 {
-title:"About You",
-artist:"The 1975",
-src:"aboutyou.mp3"
+    title:"About You",
+    artist:"The 1975",
+    src:"aboutyou.mp3"
 },
 {
-title:"Shape Of My Heart",
-artist:"Backstreet Boys",
-src:"shapeof.mp3"
+    title:"You!",
+    artist:"Lany",
+    src:"lanyyou.mp3"
 },
 {
-title:"Semua Aku Dirayakan",
-artist:"Nadin Amizah",
-src:"semuaaku.mp3"
+    title:"Semua Aku Dirayakan",
+    artist:"Nadin Amizah",
+    src:"semuaaku.mp3"
 }
 ];
 
 let currentSong = -1;
 
-function togglePlaylist(index,btn){
+function togglePlaylist(index, btn){
 
-    // matikan musik background
-    if(isMusicPlaying){
-        toggleMusic();
-    }
+    // Matikan musik background
+    const bg = document.getElementById("bgMusic");
+    bg.pause();
+    bg.currentTime = 0;
+    isMusicPlaying = false;
 
-    // kalau lagu yang sama sedang diputar
-    if(currentSong===index && !playlistPlayer.paused){
+    // Jika lagu yang sama sedang dimainkan
+    if(currentSong === index){
 
-        playlistPlayer.pause();
+        if(playlistPlayer.paused){
 
-        btn.querySelector("i").className="fa-solid fa-play text-white text-xl";
+            playlistPlayer.play();
+            btn.querySelector("i").className="fa-solid fa-pause text-white text-xl";
+
+        }else{
+
+            playlistPlayer.pause();
+            btn.querySelector("i").className="fa-solid fa-play text-white text-xl";
+
+        }
 
         return;
     }
 
-    currentSong=index;
+    // Lagu baru
+    currentSong = index;
 
-    playlistPlayer.src=playlist[index].src;
+    playlistPlayer.pause();
+    playlistPlayer.currentTime = 0;
 
-    playlistPlayer.play();
+    playlistPlayer.src = playlist[index].src;
+    playlistPlayer.load();
 
-    // reset semua icon
-    document.querySelectorAll("#page-7 button i").forEach(icon=>{
+    playlistPlayer.play().then(()=>{
 
-        icon.className="fa-solid fa-play text-white text-xl";
+        document.querySelectorAll(".playlist-btn i").forEach(icon=>{
+    icon.className="fa-solid fa-play text-white text-xl";
+});
 
+        btn.querySelector("i").className="fa-solid fa-pause text-white text-xl";
+
+    }).catch(err=>{
+        console.log(err);
+        alert("Gagal memutar lagu.");
     });
-
-    btn.querySelector("i").className="fa-solid fa-pause text-white text-xl";
 
 }
 
 playlistPlayer.addEventListener("ended",()=>{
 
-    document.querySelectorAll("#page-7 button i").forEach(icon=>{
-
-        icon.className="fa-solid fa-play text-white text-xl";
-
-    });
+    document.querySelectorAll(".playlist-btn i").forEach(icon=>{
+    icon.className="fa-solid fa-play text-white text-xl";
+});
 
 });
         // WINDOW STARTING TRIGGER
