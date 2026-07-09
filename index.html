@@ -604,7 +604,7 @@ class="w-full max-w-md hidden flex-col items-center justify-center opacity-0 tra
             <div class="text-left">
 
                 <h3 class="text-white font-semibold">
-                    My Love
+                    Shape Of My Heart
                 </h3>
 
                 <p class="text-white/60 text-sm">
@@ -675,6 +675,55 @@ class="mt-8 bg-blue-700 text-white rounded-full px-10 py-4 font-bold hover:scale
 
 </section>
 
+<section id="page-8"
+class="w-full max-w-3xl hidden flex-col justify-center items-center opacity-0 transition-all duration-700">
+
+<div class="frost-panel rounded-[2rem] p-10 text-center">
+
+<h1 class="text-4xl font-serif font-bold text-sky-700">
+💙 Terima Kasih Sayang 💙
+</h1>
+
+<p class="mt-8 text-slate-600 leading-8">
+
+Maaf ya sayang kalau website ini masih sederhana.
+Aku tahu mungkin tampilannya belum sebagus yang ada di internet, belum sempurna, bahkan mungkin masih ada banyak kekurangan.
+
+Tapi setiap halaman yang kamu buka dibuat dengan penuh rasa sayang. Aku belajar sedikit demi sedikit supaya bisa memberikan sesuatu yang spesial buat kamu.
+
+Semoga hadiah kecil ini bisa menjadi kenangan yang selalu kamu ingat.
+
+</p>
+
+<p class="mt-8 text-slate-700 text-xl font-serif">
+
+Sekali lagi...
+
+Selamat Ulang Tahun
+Annisa Mutiara Rizki ❤️
+
+Semoga semua doa terbaik selalu Allah kabulkan.
+
+Semoga selalu sehat.
+
+Semoga selalu bahagia.
+
+Semoga semua impianmu tercapai.
+
+Dan semoga aku masih menjadi orang yang selalu menemani setiap langkahmu.
+
+I Love You Forever 🤍
+
+</p>
+
+<p class="mt-8 italic text-sky-600">
+— Dari orang yang selalu mencintaimu,
+Syarif —
+</p>
+
+</div>
+
+</section>
     </main>
 
     <!-- CONFETTI CANVAS FOR CELEBRATIONS -->
@@ -831,7 +880,7 @@ class="mt-8 bg-blue-700 text-white rounded-full px-10 py-4 font-bold hover:scale
 
         // Navigation Controller (Strictly single-page separate visual states)
         function goToPage(pageNum) {
-            const pages = ['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7'];
+            const pages = ['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7', 'page-8'];
             
             // Fade out the currently active page
             pages.forEach(pId => {
@@ -844,7 +893,13 @@ class="mt-8 bg-blue-700 text-white rounded-full px-10 py-4 font-bold hover:scale
                     }, 500);
                 }
             });
+if(pageNum === 7){
 
+    if(isMusicPlaying){
+        toggleMusic();
+    }
+
+}
             // Fade in target page
             const targetPageId = pages[pageNum - 1];
             const targetEl = document.getElementById(targetPageId);
@@ -1252,9 +1307,9 @@ artist:"The 1975",
 src:"aboutyou.mp3"
 },
 {
-title:"My Love",
-artist:"Westlife",
-src:"mylove.mp3"
+title:"Shape Of My Heart",
+artist:"Backstreet Boys",
+src:"shapeof.mp3"
 },
 {
 title:"Semua Aku Dirayakan",
