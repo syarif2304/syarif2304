@@ -1238,14 +1238,15 @@ function closePhoto() {
 }
 
 // Klik area hitam untuk menutup
-document.getElementById("photoModal").addEventListener("click", function(e){
+const photoModal = document.getElementById("photoModal");
 
-    if(e.target === this){
-        closePhoto();
-    }
-
-});
-
+if (photoModal) {
+    photoModal.addEventListener("click", function(e) {
+        if (e.target === this) {
+            closePhoto();
+        }
+    });
+}
 const playlistPlayer = document.getElementById("playlistPlayer");
 let currentSong = -1;
 const playlist = [
