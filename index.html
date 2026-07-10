@@ -1244,8 +1244,10 @@ document.getElementById("photoModal").addEventListener("click", function(e){
         closePhoto();
     }
 
-});const playlistPlayer = document.getElementById("playlistPlayer");
+});
 
+const playlistPlayer = document.getElementById("playlistPlayer");
+let currentSong = -1;
 const playlist = [
 {
     title:"About You",
@@ -1263,8 +1265,6 @@ const playlist = [
     src:"semuaaku.mp3"
 }
 ];
-
-let currentSong = -1;
 
 function togglePlaylist(index, btn){
 
