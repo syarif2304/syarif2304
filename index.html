@@ -272,7 +272,7 @@
             <!-- Lock info indicator -->
             <div id="lock-badge" class="bg-amber-500/10 border border-amber-300 text-amber-700 text-xs py-2 px-5 rounded-full flex items-center gap-2 animate-pulse font-medium">
                 <i class="fa-solid fa-lock"></i>
-                <span id="lock-badge-text">STATUS: TERKUNCI (Waktu belum habis)</span>
+                <span id="lock-badge-text">STATUS: TERKUNCI (Waktunya belum habis)</span>
             </div>
 
             <div class="w-full max-w-sm space-y-3">
@@ -331,7 +331,7 @@
             </div>
             
             <div class="space-y-2">
-                <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-ether-deepOcean">Satu Pertanyaan Terakhir!</h2>
+                <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-ether-deepOcean">Satu Pertanyaan Lagi!</h2>
                 <p class="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-xs mx-auto">
                     Masukkan tanggal jadian kita sayang, untuk membuka seluruh kado berharga di dalam website ini! 💕
                 </p>
@@ -838,7 +838,7 @@ const countdownTarget = new Date("2026-07-20T00:00:00+07:00").getTime();
             const proceedBtn = document.getElementById('btn-countdown-proceed');
 
             lockBadge.className = "bg-emerald-50 border border-emerald-300 text-emerald-700 text-xs py-2 px-5 rounded-full flex items-center gap-2 animate-bounce";
-            lockBadgeText.innerHTML = `<i class="fa-solid fa-lock-open animate-pulse"></i> STATUS: TERBUKA! (Waktu Telah Tiba)`;
+            lockBadgeText.innerHTML = `<i class="fa-solid fa-lock-open animate-pulse"></i> STATUS: TERBUKA! (Waktunya Telah Tiba)`;
 
             proceedBtn.disabled = false;
             proceedBtn.className = "w-full py-4 px-8 bg-gradient-to-r from-ether-ocean via-ether-aqua to-sky-400 hover:brightness-110 text-white font-serif font-bold rounded-2xl cursor-pointer transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-sky-400/20";
