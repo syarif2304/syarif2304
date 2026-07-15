@@ -806,6 +806,10 @@ const countdownTarget = new Date("2026-07-20T00:00:00+07:00").getTime();
 
             const countdownInterval = setInterval(() => {
                 const now = new Date().getTime();
+
+console.log("Sekarang :", new Date(now));
+console.log("Target   :", new Date(countdownTarget));
+console.log("Distance :", countdownTarget - now);
                 const distance = countdownTarget - now;
 
                 if (distance < 0) {
