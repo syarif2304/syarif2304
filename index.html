@@ -280,8 +280,6 @@
                     <i class="fa-solid fa-lock"></i>
                     <span>TUNGGU SAMPAI WAKTUNYA</span>
                 </button>
-                <!-- Subtle Bypass link for Syarif/Annisa to bypass in development -->
-                <button onclick="bypassCountdown()" class="text-[9px] text-ether-ocean/50 hover:text-ether-ocean underline tracking-widest uppercase font-semibold">Bypass Timer (Khusus Syarif) 🔑</button>
             </div>
         </section>
 
@@ -825,7 +823,7 @@ const countdownTarget = new Date("2026-07-20T00:00:00+07:00").getTime();
             }, 1000);
         }
 
-        // Action when Countdown is bypassed or reached zero
+// Action when Countdown reaches zero
         function triggerUnlockState() {
             isGateUnlocked = true;
             document.getElementById('timer-days').textContent = "00";
@@ -845,10 +843,6 @@ const countdownTarget = new Date("2026-07-20T00:00:00+07:00").getTime();
             proceedBtn.innerHTML = `<span>Buka Kado Sekarang</span> <i class="fa-solid fa-chevron-right text-xs"></i>`;
         }
 
-        function bypassCountdown() {
-            triggerUnlockState();
-            playChimeSound();
-        }
 
         function verifyCountdownPermission() {
             if (isGateUnlocked) {
